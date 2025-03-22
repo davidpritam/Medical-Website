@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        fieldset {
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Appointment Form</h1>
+    <form id="appointmentForm">
+        <fieldset>
+            <legend>Patient Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Appointment Details</legend>
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor" name="doctor" required>
+                <option value="Dr. John Smith">Dr. John Smith</option>
+                <option value="Dr. Alice White">Dr. Alice White</option>
+            </select>
+            
+            <label for="appointmentType">Appointment Type:</label>
+            <select id="appointmentType" name="appointmentType" required>
+                <option value="General Checkup">General Checkup</option>
+                <option value="Follow-up">Follow-up</option>
+                <option value="Specialist Consultation">Specialist Consultation</option>
+            </select>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Medical Information</legend>
+            <label for="symptoms">Symptoms/Medical History:</label>
+            <textarea id="symptoms" name="symptoms" rows="4" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferred Language</legend>
+            <label>
+                <input type="radio" name="language" value="English" required> English
+            </label>
+            <label>
+                <input type="radio" name="language" value="Spanish"> Spanish
+            </label>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Appointment Summary</h2>
+    <table id="summaryTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Patient's Name</th>
+                <th>Selected Doctor</th>
+                <th>Appointment Type</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Symptoms/Medical History</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="summaryName"></td>
+                <td id="summaryDoctor"></td>
+                <td id="summaryAppointmentType"></td>
+                <td id="summaryDate"></td>
+                <td id="summaryTime"></td>
+                <td id="summarySymptoms"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            document.getElementById('summaryName').textContent = document.getElementById('name').value;
+            document.getElementById('summaryDoctor').textContent = document.getElementById('doctor').value;
+            document.getElementById('summaryAppointmentType').textContent = document.getElementById('appointmentType').value;
+            document.getElementById('summaryDate').textContent = document.getElementById('date').value;
+            document.getElementById('summaryTime').textContent = document.getElementById('time').value;
+            document.getElementById('summarySymptoms').textContent = document.getElementById('symptoms').value;
+
+            document.getElementById('summaryTable').style.display = 'table';
+        });
+    </script>
+</body>
+</html>

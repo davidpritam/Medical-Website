@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patent Dashboard</title>
+    <style>       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar a {
+            display: block;
+            margin: 0.5rem 0;
+            text-decoration: none;
+            color: #333;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex: 1;
+            padding: 1rem;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 0.5rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MyHealth Dashboard</h1>
+    </header>
+    <nav>
+        <a href="./Accessories/bookingform.html">Book Your Appointment</a>
+        <a href="./Accessories/appointments.html">Appointments</a>
+        
+        <a href="#settings">Settings</a>
+    </nav>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Menu </h3>
+            <a href="./Accessories/profile.html">Profile</a>
+            <a href="./Accessories/department.html">Departments</a>
+            <a href="./Accessories/medicalHistory.html">Medical History</a>
+        </div>
+        <main class="main-content">
+            <section id="profile">
+                <h2>Patient Information</h2>
+                <p><strong>Name:</strong> Ankit Kumar</p>
+                <p><strong>Date of Birth:</strong> January 12, 2002</p>
+                <p><strong>Contact:</strong> ankitsirs@gmail.com</p>
+                <p><strong>Emergency Contact:</strong>(6299521293)</p>
+            </section>
+            <section id="appointments">
+                <h2>Upcoming Appointments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Doctor's Name</th>
+                            <th>Appointment Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-03-25</td>
+                            <td>Dr. Aditya Verma</td>
+                            <td>Heart Chekup</td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-30</td>
+                            <td>Dr. Punit Kumar</td>
+                            <td>Full Body Chekup</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Medical History Summary</h2>
+            <details>
+                <summary>View Details</summary>
+                <ul>
+                    <li>Allergies: BP</li>
+                    <li>Conditions: Hypertension</li>
+                    <li>Medications: Aspirin</li>
+                    <li>Surgeries: Appendectomy (2015)</li>
+                </ul>
+            </details>
+            </section>
+            
+        </main>
+    </div>
+
+    <footer>
+        <p>
+            <a href="./Accessories/contact.html">Contacts Us</a> | <a href="./termsandconditon.html">Terms of Service</a> 
+        </p>
+    </footer>
+    
+    
+</body>
+</html>
